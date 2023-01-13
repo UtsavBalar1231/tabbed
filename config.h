@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]        = "JetBrains Mono Nerd Font:size=12";
+static const char font[]        = "JetBrains Mono Nerd Font:size=16";
 static const char* normbgcolor  = "#000000";
 static const char* normfgcolor  = "#ddc7a1";
 static const char* selbgcolor   = "#141617";
@@ -16,6 +16,7 @@ static const Bool foreground    = True;
 static       Bool urgentswitch  = False;
 static const char *tabicon_active    = "󰅍";
 static const char *tabicon_inactive  = "󰨸";
+static const int  separator     = 4;
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,

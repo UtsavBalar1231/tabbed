@@ -16,6 +16,7 @@ static const Bool foreground    = True;
 static       Bool urgentswitch  = False;
 static const char *tabicon_active    = "󰅍";
 static const char *tabicon_inactive  = "󰨸";
+static const int  separator     = 4;
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,
