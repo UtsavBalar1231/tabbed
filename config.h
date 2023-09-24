@@ -14,6 +14,8 @@ static const char titletrim[]   = "...";
 static const int  tabwidth      = 200;
 static const Bool foreground    = True;
 static       Bool urgentswitch  = False;
+static const char *tabicon_active    = "󰅍";
+static const char *tabicon_inactive  = "󰨸";
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,
