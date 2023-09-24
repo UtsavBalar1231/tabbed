@@ -3,9 +3,9 @@
 /* appearance */
 static const char font[]        = "JetBrains Mono Nerd Font:size=16";
 static const char* normbgcolor  = "#000000";
-static const char* normfgcolor  = "#ddc7a1";
+static const char* normfgcolor  = "#504945";
 static const char* selbgcolor   = "#141617";
-static const char* selfgcolor   = "#d4be98";
+static const char* selfgcolor   = "#89b482";
 static const char* urgbgcolor   = "#000000";
 static const char* urgfgcolor   = "#ea6962";
 static const char before[]      = "<";
