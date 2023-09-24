@@ -242,7 +242,7 @@ void buttonpress(const XEvent *e)
 	int i, fc;
 	Arg arg;
 
-	if (ev->y < 0 || ev->y > bh)
+	if (ev->y < wh - bh)
 		return;
 
 	if (((fc = getfirsttab()) > 0 && ev->x < TEXTW(before)) || ev->x < 0)
@@ -417,7 +417,7 @@ void drawbar(void)
 		dc.w = ww;
 		XFetchName(dpy, win, &name);
 		drawtext(name ? name : "", dc.norm);
-		XCopyArea(dpy, dc.drawable, win, dc.gc, 0, 0, ww, vbh, 0, 0);
+		XCopyArea(dpy, dc.drawable, win, dc.gc, 0, 0, ww, vbh, 0, wh - bh);
 		XSync(dpy, False);
 
 		return;
@@ -482,7 +482,7 @@ void drawbar(void)
 		dc.x += dc.w;
 		clients[c]->tabx = dc.x;
 	}
-	XCopyArea(dpy, dc.drawable, win, dc.gc, 0, 0, ww, bh, 0, 0);
+	XCopyArea(dpy, dc.drawable, win, dc.gc, 0, 0, ww, bh, 0, wh - bh);
 	XSync(dpy, False);
 }
 
@@ -507,7 +507,7 @@ void drawtext(const char *text, XftColor col[ColLast])
 	olen = strlen(text);
 	h = dc.font.ascent + dc.font.descent;
 	y = dc.y + (dc.h / 2) - (h / 2) + dc.font.ascent;
-	x = dc.x + (h / 2);
+	x = dc.x + h;
 
 	/* shorten text if necessary */
 	for (len = MIN(olen, sizeof(buf)); len && textnw(text, len) > dc.w - h;
@@ -974,7 +974,7 @@ void resize(int c, int w, int h)
 	XWindowChanges wc;
 
 	ce.x = 0;
-	ce.y = wc.y = bh;
+	ce.y = wc.y = 0;
 	ce.width = wc.width = w;
 	ce.height = wc.height = h;
 	ce.type = ConfigureNotify;
